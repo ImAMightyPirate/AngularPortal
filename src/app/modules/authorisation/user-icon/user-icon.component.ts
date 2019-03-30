@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faLock, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-icon',
@@ -9,6 +9,9 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class UserIconComponent implements OnInit {
 
+  faKey = faKey;
+  faLock = faLock;
+  faSignOutAlt = faSignOutAlt;
   faUserCircle = faUserCircle;
 
   constructor() { }

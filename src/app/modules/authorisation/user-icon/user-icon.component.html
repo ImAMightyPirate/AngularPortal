@@ -1,4 +1,18 @@
-<button mat-button color="accent">
+<button mat-button color="accent" [matMenuTriggerFor]="menu">
   <fa-icon [icon]="faUserCircle" size="lg"></fa-icon>
   <span class="icon-description">Username</span>
 </button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <fa-icon [icon]="faSignOutAlt" size="lg"></fa-icon>
+    <span class="icon-description">Sign out</span>
+  </button>
+  <button mat-menu-item>
+    <fa-icon [icon]="faLock" size="lg"></fa-icon>
+    <span class="icon-description">Lock system</span>
+  </button>
+  <button mat-menu-item>
+    <fa-icon [icon]="faKey" size="lg"></fa-icon>
+    <span class="icon-description">Change password</span>
+  </button>
+</mat-menu>
