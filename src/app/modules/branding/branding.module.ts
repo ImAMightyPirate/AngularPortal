@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CompanyLogoComponent } from './company-logo/company-logo.component';
+import { ProductLogoComponent } from './product-logo/product-logo.component';
 
 @NgModule({
   imports: 
@@ -9,12 +9,12 @@ import { CompanyLogoComponent } from './company-logo/company-logo.component';
   ],
   declarations: 
   [
-    CompanyLogoComponent
+    ProductLogoComponent
   ],
   exports: 
   [
     CommonModule,
-    CompanyLogoComponent
+    ProductLogoComponent
   ]
 })
 export class BrandingModule { }
