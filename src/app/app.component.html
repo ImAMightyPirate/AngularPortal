@@ -1,14 +1,12 @@
-<div class="test">
-  <app-header></app-header>
+<app-header></app-header>
 
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav [mode]="push" [(opened)]="opened">
-      <app-sidebar-menu></app-sidebar-menu>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      Page content
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="push" [(opened)]="isMenuOpened">
+    <app-sidebar-menu></app-sidebar-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    Page content
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-  <app-footer></app-footer>
-</div>
+<app-footer></app-footer>

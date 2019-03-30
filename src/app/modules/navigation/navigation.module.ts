@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material';
 
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { MenuToggleService } from './services/menu-toggle.service';
 
 @NgModule({
   imports: 
@@ -28,6 +29,7 @@ import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
     FontAwesomeModule,
     HamburgerMenuComponent,
     SidebarMenuComponent
-  ]
+  ],
+  providers: [MenuToggleService]
 })
 export class NavigationModule { }

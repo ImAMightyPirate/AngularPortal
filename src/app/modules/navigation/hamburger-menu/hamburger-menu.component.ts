@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
+import { MenuToggleService } from './../services/menu-toggle.service';
+
 @Component({
   selector: 'app-hamburger-menu',
   templateUrl: './hamburger-menu.component.html',
@@ -11,9 +13,14 @@ export class HamburgerMenuComponent implements OnInit {
 
   faBars = faBars;
 
-  constructor() { }
+  constructor(private menuToggleService: MenuToggleService) {   
+  }
 
   ngOnInit() {
+  }
+
+  onMenuToggle() {
+    this.menuToggleService.toggle();
   }
 
 }
