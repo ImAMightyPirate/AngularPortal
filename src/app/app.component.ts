@@ -7,20 +7,25 @@ import { SidebarMenuComponent } from './modules/navigation/sidebar-menu/sidebar-
 import { MenuToggleService } from './modules/navigation/services/menu-toggle.service';
 
 @Component({
-  selector: 'my-app',
+  selector: 'portal-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
 
-  isMenuOpened: ConstrainBoolean;
+  private isMenuOpened: boolean;
 
-  menuToggleServiceSbscription: Subscription;
+  private menuToggleServiceSubscription: Subscription;
 
   constructor(private menuToggleService: MenuToggleService) {
       this.isMenuOpened = false;
 
-      this.menuToggleServiceSbscription = menuToggleService.menuToggled$.subscribe(
-      () => { this.isMenuOpened = !this.isMenuOpened; });
+      this.menuToggleServiceSubscription = menuToggleService.menuToggled$.subscribe(
+        () => { 
+          this.isMenuOpened = !this.isMenuOpened; });
+  }
+
+  ngOnDestroy() {
+    this.menuToggleServiceSubscription.unsubscribe();
   }
 }
