@@ -1,3 +1,6 @@
-<p>
-  Sidebar content.
-</p>
+<mat-action-list dense>
+  <button *ngFor="let menuItem of menuItems" routerLink="{{menuItem.Route}}" mat-list-item>
+    <fa-icon [icon]="faBox" size="lg"></fa-icon>
+    <span class="icon-description">{{menuItem.Name}}</span>
+  </button>
+</mat-action-list>

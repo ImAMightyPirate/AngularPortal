@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatMenuModule } from '@angular/material';
+import { MatButtonModule, MatMenuModule  } from '@angular/material';
 
 import { UserIconComponent } from './user-icon/user-icon.component';
 
@@ -15,7 +15,7 @@ import { UserIconComponent } from './user-icon/user-icon.component';
     CommonModule,
     FontAwesomeModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule 
   ],
   declarations: 
   [
