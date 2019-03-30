@@ -1,4 +1,4 @@
-<mat-action-list dense>
+<mat-action-list>
   <button *ngFor="let menuItem of menuItems" routerLink="{{menuItem.Route}}" mat-list-item>
     <fa-icon [icon]="faBox" size="lg"></fa-icon>
     <span class="icon-description">{{menuItem.Name}}</span>

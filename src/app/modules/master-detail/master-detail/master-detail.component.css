@@ -1,0 +1,15 @@
+.module-title-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-description {
+  padding-left: 0.5em;
+}
+
+button {
+  margin-left: 1em;
+}
+
+table {
+  width: 100%;
+}
