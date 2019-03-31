@@ -2,8 +2,8 @@
 // Plus imports for other components in your app.
 
 $custom-typography: mat-typography-config(
-  //$font-family: "'IBM Plex Sans', sans-serif;"
-  $font-family: "'Questrial', sans-serif;"
+  $font-family: "'IBM Plex Sans', sans-serif;"
+  //$font-family: "'Questrial', sans-serif;"
 );
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -14,10 +14,10 @@ $custom-typography: mat-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-//$candy-app-primary: mat-palette($mat-grey, 200);
-//$candy-app-accent:  mat-palette($mat-grey, 900);
-$candy-app-primary: mat-palette($mat-light-green, 900);
-$candy-app-accent:  mat-palette($mat-grey, 300);
+$candy-app-primary: mat-palette($mat-grey, 200);
+$candy-app-accent:  mat-palette($mat-grey, 900);
+//$candy-app-primary: mat-palette($mat-light-green, 900);
+//$candy-app-accent:  mat-palette($mat-grey, 300);
 
 // The warn palette is optional (defaults to red).
 $candy-app-warn:    mat-palette($mat-red, 900);
