@@ -11,24 +11,24 @@
 
     <span class="module-title-spacer"></span>
 
-    <button mat-flat-button *ngIf="showViewButton" [disabled]="disabledButton()">
+    <button mat-flat-button *ngIf="showViewButton" [disabled]="disabledRecordButton()">
       <fa-icon [icon]="faEye" size="lg"></fa-icon>
       <span class="icon-description">View</span>
     </button>
 
-    <button mat-flat-button *ngIf="showAddButton" [disabled]="disabledButton()">
-      <fa-icon [icon]="faPlus" size="lg"></fa-icon>
-      <span class="icon-description">Add</span>
-    </button>
-
-    <button mat-flat-button *ngIf="showEditButton" [disabled]="disabledButton()">
+    <button mat-flat-button *ngIf="showEditButton" [disabled]="disabledRecordButton()">
       <fa-icon [icon]="faPencilAlt" size="lg"></fa-icon>
       <span class="icon-description">Edit</span>
     </button>
 
-    <button mat-flat-button *ngIf="showDeleteButton" [disabled]="disabledButton()">
+    <button mat-flat-button *ngIf="showDeleteButton" [disabled]="disabledRecordButton()">
       <fa-icon [icon]="faTrashAlt" size="lg"></fa-icon>
       <span class="icon-description">Delete</span>
+    </button>
+    
+    <button mat-flat-button *ngIf="showAddButton" [disabled]="disabledAddButton()">
+      <fa-icon [icon]="faPlus" size="lg"></fa-icon>
+      <span class="icon-description">New</span>
     </button>
 
    </mat-toolbar-row>

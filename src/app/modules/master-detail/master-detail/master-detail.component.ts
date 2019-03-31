@@ -75,13 +75,12 @@ export class MasterDetailComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor() { 
-     if (this.isEditEnabled) {
+    this.showViewButton = true;
+
+    if (this.isEditEnabled) {
       this.showAddButton = true;
       this.showEditButton = true;
       this.showDeleteButton = true;
-    }
-    else {
-      this.showViewButton = true;
     }
   }
 
@@ -98,12 +97,16 @@ export class MasterDetailComponent implements OnInit {
     this.selection.toggle(row);
   }
 
-  disabledButton() : boolean {
+  disabledRecordButton() : boolean {
     if (this.selection.selected.length === 1) {
       return false;
     }
 
     return true;
+  }
+
+  disabledAddButton() : boolean {
+    return !this.isEditEnabled;
   }
 
   checkboxLabel(row: PeriodicElement): string {
