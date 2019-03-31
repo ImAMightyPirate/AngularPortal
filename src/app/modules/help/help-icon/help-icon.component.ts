@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faInfoCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-help-icon',
@@ -9,6 +9,8 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class HelpIconComponent implements OnInit {
 
+  faBook = faBook;
+  faInfoCircle = faInfoCircle;
   faQuestionCircle = faQuestionCircle;
 
   constructor() { }

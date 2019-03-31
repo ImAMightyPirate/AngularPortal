@@ -1,4 +1,4 @@
-<mat-toolbar color="accent">
+<mat-toolbar color="accent" class="module-title-toolbar">
    <mat-toolbar-row>
     <span>Module Name</span>
 
@@ -33,7 +33,7 @@
 
    </mat-toolbar-row>
 </mat-toolbar>
-<div class="masterContainer">
+<div class="module-master-grid">
   <div>
     <table mat-table [dataSource]="dataSource" matSort>
 
@@ -65,7 +65,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[12]" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons></mat-paginator>
   </div>
 </div>
 <mat-toolbar color="accent" *ngIf="">

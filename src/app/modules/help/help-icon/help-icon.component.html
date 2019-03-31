@@ -1,4 +1,14 @@
-<button mat-button color="accent">
+<button mat-button color="accent" [matMenuTriggerFor]="menu">
   <fa-icon [icon]="faQuestionCircle" size="lg"></fa-icon>
   <span class="icon-description">Help</span>
 </button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <fa-icon [icon]="faBook" size="lg"></fa-icon>
+    <span class="icon-description">User guide</span>
+  </button>
+  <button mat-menu-item>
+    <fa-icon [icon]="faInfoCircle" size="lg"></fa-icon>
+    <span class="icon-description">Version information</span>
+  </button>
+</mat-menu>
