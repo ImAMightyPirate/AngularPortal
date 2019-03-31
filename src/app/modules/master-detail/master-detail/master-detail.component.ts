@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { SelectionModel } from '@angular/cdk/collections';
 
 import { faCheck, faEye, faEyeSlash, faPencilAlt, faPlus, faSearch, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -51,39 +52,62 @@ export class MasterDetailComponent implements OnInit {
   faTimes = faTimes;
   faTrashAlt = faTrashAlt;
 
-  private ShowDetailPane: boolean;
-  
+  private isEditEnabled: boolean = true;
+
   /* Master pane buttons */
-  private ShowViewButton: boolean = true;
-  private ShowAddButton: boolean;
-  private EnableAddButton: boolean;
-  private ShowEditButton: boolean;
-  private EnableEditButton: boolean;
-  private ShowDeleteButton: boolean;
-  private EnableDeleteButton: boolean;
+  private showViewButton: boolean;
+  private showAddButton: boolean;
+  private showEditButton: boolean;
+  private showDeleteButton: boolean;
 
   /* Detail pane buttons */
-  private ShowHideButton: boolean;
-  private ShowConfirmButton: boolean;
-  private ShowCancelButton: boolean;
+  private showHideButton: boolean;
+  private showConfirmButton: boolean;
+  private showCancelButton: boolean;
 
   /* Table stuff */
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  selection = new SelectionModel<PeriodicElement>(false, []);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  constructor() { 
+     if (this.isEditEnabled) {
+      this.showAddButton = true;
+      this.showEditButton = true;
+      this.showDeleteButton = true;
+    }
+    else {
+      this.showViewButton = true;
+    }
+  }
 
-  constructor() { }
-
-ngOnInit() {
+  ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
   
- applyFilter(filterValue: string) {
+  applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  onCheckboxChanged(row: PeriodicElement) {
+    this.selection.toggle(row);
+  }
+
+  disabledButton() : boolean {
+    if (this.selection.selected.length === 1) {
+      return false;
+    }
+
+    return true;
+  }
+
+  checkboxLabel(row: PeriodicElement): string {
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+  }
+
 }
