@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
-import { faCheck, faPencilAlt, faPlus, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faEye, faEyeSlash, faPencilAlt, faPlus, faSearch, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
+/* Table models */
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -10,6 +11,7 @@ export interface PeriodicElement {
   symbol: string;
 }
 
+/* Table models */
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -41,20 +43,47 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class MasterDetailComponent implements OnInit {
 
   faCheck = faCheck;
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
   faPencilAlt = faPencilAlt;
   faPlus = faPlus;
+  faSearch = faSearch;
   faTimes = faTimes;
   faTrashAlt = faTrashAlt;
+
+  private ShowDetailPane: boolean;
+  
+  /* Master pane buttons */
+  private ShowViewButton: boolean = true;
+  private ShowAddButton: boolean;
+  private EnableAddButton: boolean;
+  private ShowEditButton: boolean;
+  private EnableEditButton: boolean;
+  private ShowDeleteButton: boolean;
+  private EnableDeleteButton: boolean;
+
+  /* Detail pane buttons */
+  private ShowHideButton: boolean;
+  private ShowConfirmButton: boolean;
+  private ShowCancelButton: boolean;
+
+  /* Table stuff */
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
 
   constructor() { }
 
 ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
-
+  
+ applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

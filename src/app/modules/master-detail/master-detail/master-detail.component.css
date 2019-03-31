@@ -6,8 +6,16 @@
   padding-left: 0.5em;
 }
 
+.search-icon {
+  padding-right: 0.5em;
+}
+
 button {
   margin-left: 1em;
+}
+
+mat-form-field {
+  font-size: 0.8em;
 }
 
 table {
