@@ -8,7 +8,6 @@ import { MatSidenavModule } from '@angular/material';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HeaderModule } from './modules/header/header.module';
-import { FooterModule } from './modules/footer/footer.module';
 import { MasterDetailModule } from './modules/master-detail/master-detail.module';
 import { NavigationModule } from './modules/navigation/navigation.module';
 
@@ -25,7 +24,6 @@ import { AppComponent } from './app.component';
     FontAwesomeModule,
 
     HeaderModule,
-    FooterModule,
     MasterDetailModule,
     NavigationModule
   ],

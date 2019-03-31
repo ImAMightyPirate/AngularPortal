@@ -9,17 +9,10 @@ app-header {
   right: 0;
 }
 
-app-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 mat-sidenav-container {
   position: absolute;
   top: 60px;
-  bottom: 60px;
+  bottom: 0;
   left: 0;
   right: 0;
 }
