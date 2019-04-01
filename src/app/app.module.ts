@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MatIconModule, MatIconRegistry, MatSidenavModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HeaderModule } from './modules/header/header.module';
 import { MasterDetailModule } from './modules/master-detail/master-detail.module';
@@ -19,16 +20,12 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot([]),
-    MatIconModule,
     MatSidenavModule,
+    FontAwesomeModule,
 
     HeaderModule,
     MasterDetailModule,
     NavigationModule
-  ],
-  providers:
-  [
-    MatIconRegistry
   ],
   declarations: 
   [ 
@@ -39,8 +36,4 @@ import { AppComponent } from './app.component';
     AppComponent 
   ]
 })
-export class AppModule { 
-  constructor(public matIconRegistry: MatIconRegistry) {
-    matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
-  }
-}
+export class AppModule { }

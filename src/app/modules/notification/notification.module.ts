@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -13,6 +14,7 @@ import { NotificationAlertComponent } from './notification-alert/notification-al
   imports: 
   [
     CommonModule,
+    FontAwesomeModule,
     MatButtonModule,
     MatBadgeModule
   ],
@@ -23,6 +25,7 @@ import { NotificationAlertComponent } from './notification-alert/notification-al
   exports:
   [
     CommonModule,
+    FontAwesomeModule,
     NotificationAlertComponent
   ]
 })

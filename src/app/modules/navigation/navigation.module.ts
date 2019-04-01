@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { MatButtonModule, MatListModule } from '@angular/material';
 
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
@@ -17,6 +19,7 @@ import { MenuToggleService } from './services/menu-toggle.service';
   [
     CommonModule,
     RouterModule,
+    FontAwesomeModule,
     MatButtonModule,
     MatListModule
   ],
@@ -28,6 +31,7 @@ import { MenuToggleService } from './services/menu-toggle.service';
   exports:
   [
     CommonModule,
+    FontAwesomeModule,
     HamburgerMenuComponent,
     SidebarMenuComponent
   ],
