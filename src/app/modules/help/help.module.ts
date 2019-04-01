@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatMenuModule } from '@angular/material';
 
@@ -13,7 +12,6 @@ import { HelpIconComponent } from './help-icon/help-icon.component';
   imports: 
   [
     CommonModule,
-    FontAwesomeModule,
     MatButtonModule,
     MatMenuModule
   ],
@@ -24,7 +22,6 @@ import { HelpIconComponent } from './help-icon/help-icon.component';
   exports:
   [
     CommonModule,
-    FontAwesomeModule,
     HelpIconComponent
   ]
 })

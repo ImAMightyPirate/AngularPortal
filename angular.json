@@ -24,7 +24,8 @@
             ],
             "styles": [
               "src/style.css",
-              "src/theme.scss"
+              "src/theme.scss",
+              "../node_modules/@fortawesome/free-solid-svg-icons/scss/font-awesome.scss"
             ],
             "scripts": []
           },
