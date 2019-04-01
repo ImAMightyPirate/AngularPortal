@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatBottomSheet, MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 
 import { faCheck, faEye, faEyeSlash, faPencilAlt, faPlus, faSearch, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+import { DetailComponent } from './../detail/detail.component';
 
 /* Table models */
 export interface PeriodicElement {
@@ -74,7 +76,7 @@ export class MasterDetailComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() { 
+  constructor(private bottomSheet: MatBottomSheet) { 
     this.showViewButton = true;
 
     if (this.isEditEnabled) {
@@ -111,6 +113,12 @@ export class MasterDetailComponent implements OnInit {
 
   checkboxLabel(row: PeriodicElement): string {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+  }
+
+  viewRecord(): void {
+    this.bottomSheet.open(DetailComponent, {
+      panelClass: 'bottom-sheet-panel'
+    });
   }
 
 }

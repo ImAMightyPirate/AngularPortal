@@ -11,7 +11,7 @@
 
     <span class="module-title-spacer"></span>
 
-    <button mat-flat-button *ngIf="showViewButton" [disabled]="disabledRecordButton()">
+    <button mat-flat-button *ngIf="showViewButton" [disabled]="disabledRecordButton()" (click)="viewRecord()">
       <fa-icon [icon]="faEye" size="lg"></fa-icon>
       <span class="icon-description">View</span>
     </button>
